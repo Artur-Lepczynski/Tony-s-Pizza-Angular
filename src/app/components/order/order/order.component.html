@@ -1,0 +1,21 @@
+<app-page>
+  <div class="main-wrapper card">
+    <h2>Thanks for your order!</h2>
+    <div class="delivery" *ngIf="!delivered">
+      <p>Your order will be delivered in:</p>
+      <div class="time">
+        <p>{{ deliveryTimeString }}</p>
+      </div>
+    </div>
+    <div class="delivered" *ngIf="delivered">
+      <p>Your order has been delivered!</p>
+    </div>
+
+    <hr/>
+
+    <app-button use="order-reset" type="button" look="primary" (buttonClick)="handleReset()">
+      <span slot="button">Reset Order</span>
+    </app-button>
+
+  </div>
+</app-page>

@@ -1,0 +1,23 @@
+<app-page use="menu">
+  <div class="menu-header">
+    <button (click)="handleNavClick('pizza')">Pizza</button>
+    <button (click)="handleNavClick('sauces')">Sauces</button>
+    <button (click)="handleNavClick('drinks')">Drinks</button>
+    <button (click)="handleNavClick('salads')">Salads</button>
+    <button (click)="handleNavClick('desserts')" [ngStyle]="{borderRight: '2px solid black'}">
+      Desserts</button>
+  </div>
+  <!-- menu categorie -->
+  <div class="menu-categories">
+    <app-menu-category 
+    *ngFor="let category of menu"
+    [category]="category.category"
+    [description]="category.description"
+    [items]="category.items"
+    ></app-menu-category>
+  </div>
+
+  <app-menu-cart></app-menu-cart>
+
+  <!-- menu cart button -->
+</app-page>

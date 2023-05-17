@@ -1,0 +1,67 @@
+.main-wrapper {
+  width: 95%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: Lato;
+}
+
+.main-wrapper h2 {
+  text-align: center;
+  margin: 5px auto;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.main-wrapper h2::after {
+  content: "";
+  width: 42%;
+  height: 2px;
+  background-color: var(--primary-accent1);
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.main-wrapper h2::before {
+  content: "";
+  width: 42%;
+  height: 2px;
+  background-color: var(--primary-accent1);
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+
+.category-description {
+  margin: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.card{
+  /* width: 95%;
+  max-width: 1200px; */
+  min-width: 300px; 
+  min-height: 100px;
+  /* margin: auto;
+  padding: 10px; */
+  border-radius: 5px;
+  background-color: var(--bg4);
+  color: var(--primary-text1);
+  animation: var(--primary-animation-duration) ease-in forwards appear; 
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+}

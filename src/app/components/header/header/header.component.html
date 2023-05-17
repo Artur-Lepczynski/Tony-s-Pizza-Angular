@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="logo-wrapper">
+    <img src="/assets/images/logo.png" alt="logo" />
+    <a routerLink="/" class="link-home">
+      <h1 class="header-name">Tony's Pizza</h1>
+    </a>
+    <!-- button if ordered -->
+    <app-button *ngIf="ordered" type="button" look="primary" use="header" (buttonClick)="handleTrackOrder()"
+      ><span slot="button">Track Order</span></app-button>
+  </div>
+
+
+  <nav *ngIf="isAuth">
+    <p>Hello, {{ name() }}</p>
+    <app-button type="link" look="primary" use="header-link-account" to="/account">
+      <span slot="link"><i class="fa-solid fa-user"></i></span>
+    </app-button>
+  </nav>
+  <nav *ngIf="!isAuth">
+    <app-button type="link" look="primary" to="/auth" [queryParams]="{mode: 'login'}" use="header-link">
+      <span slot="link">Log In</span>
+    </app-button>
+    <app-button type="link" look="primary" to="/auth" [queryParams]="{mode: 'signup'}" use="header-link">
+      <span slot="link">Sign Up</span>
+    </app-button>
+  </nav>
+
+</header>

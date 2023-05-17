@@ -1,0 +1,35 @@
+<div class="modal-wrapper">
+  <div class="card modal">
+    <div class="modal-header">
+      <h2>Your Cart</h2>
+    </div>
+
+    <div class="modal-items">
+      <p class="modal-empty" *ngIf="orderedItems.length === 0">
+        Your cart is empty!
+      </p>
+      <app-menu-cart-modal-item
+      *ngFor="let item of orderedItems"
+      [item]="item"
+      >
+      </app-menu-cart-modal-item>
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-total">
+        <span>Total</span>
+        <span>${{ priceTotal }}</span>
+      </div>
+
+      <div class="modal-actions">
+        <app-button use="menu-modal" type="button" look="secondary" (buttonClick)="handleModalClose()">
+          <span slot="button">Cancel</span>
+        </app-button>
+        <app-button use="menu-modal" type="button" look="primary" [disabled]="orderedItems.length === 0" 
+        (buttonClick)="handleOrder()">
+          <span slot="button">Checkout</span>
+        </app-button>
+      </div>
+    </div>
+  </div>
+</div>

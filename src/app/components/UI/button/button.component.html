@@ -1,0 +1,33 @@
+<button *ngIf="type === 'button'"
+  [ngClass]="{
+    button: 1, 
+    primary: look === 'primary', 
+    secondary: look === 'secondary', 
+    header: use === 'header', 
+    signout: use === 'signout',
+    modal: use === 'modal',
+    order: use === 'order', 
+    'menu-item': use === 'menu-item',
+    'menu-add': use === 'menu-add',
+    'menu-modal': use === 'menu-modal',
+    checkout: use === 'checkout',
+    'order-reset': use === 'order-reset',
+    disabled: disabled}"
+  [disabled]="disabled" (click)="onClick()">
+  <!-- {{text}} -->
+  <ng-content select="[slot=button]"></ng-content>
+</button>
+
+<a *ngIf="type === 'link'" [routerLink]="to" 
+[queryParams]="queryParams"
+[ngClass]="{
+  button: 1, 
+  primary: look === 'primary', 
+  secondary: look === 'secondary', 
+  disabled: disabled,
+  account: use === 'header-link-account', 
+  link: use === 'header-link'
+}">
+  <!-- {{text}} -->
+  <ng-content select="[slot=link]"></ng-content>
+</a>

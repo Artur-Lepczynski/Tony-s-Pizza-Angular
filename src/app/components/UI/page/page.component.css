@@ -1,0 +1,21 @@
+.page{
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  padding-top: 5px; 
+  background-color: var(--bg5);
+  box-sizing: border-box;
+}
+
+.home{
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.menu{
+  padding-bottom: 20px;
+}
+
+.checkout{
+  padding: 5px;
+}

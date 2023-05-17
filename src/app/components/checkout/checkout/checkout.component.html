@@ -1,0 +1,94 @@
+<app-page use="checkout">
+  <div class="card wrapper">
+    <h2>Checkout</h2>
+
+    <div class="info">
+
+      <div class="user-info">
+        <h2>Your Information:</h2>
+
+        <div class="user-info-item">
+          <p>Name:</p>
+          <p>{{ userData.name }}</p>
+        </div>
+
+        <div class="user-info-item">
+          <p>Last Name:</p>
+          <p>{{ userData.lastName }}</p>
+        </div>
+
+        <div class="user-info-item">
+          <p>Email:</p>
+          <p>{{ userData.email }}</p>
+        </div>
+
+        <div class="user-info-item">
+          <p>Address:</p>
+          <p>{{ userData.deliveryAddress }}</p>
+        </div>
+
+        <div class="payment">
+          <h2>Payment Options</h2>
+
+          <div class="payment-item">
+            <input
+              type="radio"
+              name="payment"
+              id="cash"
+              value="cash"
+              [(ngModel)]="paymentMethod"
+              defaultChecked
+            />
+            <label htmlFor="cash">Cash</label>
+          </div>
+
+          <div class="payment-item">
+            <input
+              type="radio"
+              name="payment"
+              id="creditCard"
+              value="creditCard"
+              [(ngModel)]="paymentMethod"
+            />
+            <label htmlFor="creditCard">Credit Card</label>
+          </div>
+
+          <div class="payment-item">
+            <input
+              type="radio"
+              name="payment"
+              id="bitcoin"
+              value="bitcoin"
+              [(ngModel)]="paymentMethod"
+            />
+            <label htmlFor="bitcoin">Bitcoin</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-info">
+        <h2>Order</h2>
+
+        <div class="order-info-item" *ngFor="let item of orderedItems">
+          <img [src]="item.imgUrl" alt="foodz" />
+          <div class="order-item-info">
+            <h3>{{ item.name }}</h3>
+              <span class="item-price">$ {{ item.price }}</span>
+              <span class="item-amount">x {{ item.amount }}</span>
+          </div>
+        </div>
+
+        <div class="order-total">
+          <span>Total</span>
+          <span>$ {{ priceTotal }}</span>
+        </div>
+      </div>
+    </div>
+
+    <app-button use="checkout" type="button" look="primary" [disabled]="orderedItems.length <= 0"
+    (buttonClick)="handleOrder()"
+    >
+    <span slot="button">Place Order</span>
+  </app-button>
+  </div>
+</app-page>

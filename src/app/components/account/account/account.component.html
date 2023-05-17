@@ -1,0 +1,38 @@
+<app-page>
+  <app-card use="main">
+    <h2 class="header">Account Information</h2>
+
+    <div class="info-wrapper">
+      <div class="info-item">
+        <p class="info-item-label">Name:</p>
+        <p class="info-item-value">{{ userData.name }}</p>
+      </div>
+
+      <div class="info-item">
+        <p class="info-item-label">Last Name:</p>
+        <p class="info-item-value">{{ userData.lastName }}</p>
+      </div>
+
+      <div class="info-item">
+        <p class="info-item-label">Email:</p>
+        <p class="info-item-value">{{ userData.email }}</p>
+      </div>
+
+      <div class="info-item">
+        <p class="info-item-label">Address:</p>
+        <p class="info-item-value">{{ userData.address }}</p>
+      </div>
+    </div>
+
+    <app-button type="button" look="primary" use="signout" (buttonClick)="signOut()">
+      <span slot="button">Sign Out</span>
+    </app-button>
+
+
+
+  </app-card>
+</app-page>
+
+<app-modal *ngIf="modalShown" header="Signing out" message="Are you sure you want to sign out?" cancelText="Cancel"
+  confirmText="Sign out" (onConfirm)="confirmHandler()" (onCancel)="cancelHandler()">
+</app-modal>

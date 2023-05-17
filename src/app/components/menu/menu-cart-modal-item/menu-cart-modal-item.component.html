@@ -1,0 +1,16 @@
+<div class="modal-item">
+  <img [src]="item.imgUrl" alt="food item" />
+  <div class="modal-item-info">
+    <h3>{{ item.name }}</h3>
+    <span class="item-price">${{ item.price }}</span>
+    <span class="item-amount">x {{ item.amount }}</span>
+  </div>
+  <div class="item-actions">
+    <app-button type="button" look="primary" (buttonClick)="handleAdd()">
+      <span slot="button">+ </span>
+    </app-button>
+    <app-button type="button" look="secondary" (buttonClick)="handleRemove()">
+      <span slot="button">-</span>
+    </app-button>
+  </div>
+</div>

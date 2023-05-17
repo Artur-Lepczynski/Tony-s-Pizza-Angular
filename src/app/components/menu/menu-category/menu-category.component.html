@@ -1,0 +1,15 @@
+<div class="main-wrapper card">
+  <h2 [id]="category">{{ category }}</h2>
+  <p class="category-description">{{ description }}</p>
+
+  <div class="category-items">
+    <app-menu-item
+      *ngFor="let item of items"
+      [id]="item.id"
+      [name]="item.name"
+      [description]="item.description"
+      [price]="item.price"
+      [url]="item.imgUrl"
+    ></app-menu-item>
+  </div>
+</div>

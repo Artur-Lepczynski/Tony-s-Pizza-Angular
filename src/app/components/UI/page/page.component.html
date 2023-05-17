@@ -1,0 +1,7 @@
+<div class="page" [ngClass]="{
+  home: use === 'home', 
+  menu: use === 'menu', 
+  checkout: use === 'checkout'
+}">
+  <ng-content></ng-content>
+</div>

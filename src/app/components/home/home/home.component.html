@@ -1,0 +1,65 @@
+<app-page use="home">
+  <main>
+    <img class="banner" src="../../../../assets/images/banner.jpg" alt="" />
+    <div class="order card">
+      <h2>{{ ordered ? "Start a new order" : "Begin your order" }}</h2>
+      <input type="text" [(ngModel)]="enteredAddress" (blur)="addressBlur()" placeholder="Enter Address" />
+      <p *ngIf="!enteredAddressInputValid()" class="text-invalid">Address should be at least 7 characters long</p>
+      <app-button use="order" type="button" look="primary" [disabled]="!enteredAddressValid()" (buttonClick)="handleOrder()">
+        <span slot="button">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </app-button>
+    </div>
+  </main>
+
+  <div class="card description">
+    <h2>Why choose us?</h2>
+
+    <div class="description-item">
+      <i class="fa-solid fa-pizza-slice"></i>
+      <div>
+        <h3>Best quality</h3>
+        <p>
+          Satisfy your cravings with Tony's Pizza! Our handmade pizzas are
+          crafted with the freshest ingredients and baked to perfection,
+          ensuring that every slice is packed with flavor. From classic
+          toppings to gourmet combinations, we've got something for everyone.
+          Don't settle for ordinary pizza. Experience the difference with
+          Tony's.
+        </p>
+      </div>
+    </div>
+
+    <div class="description-item">
+      <i class="fa-solid fa-truck-fast"></i>
+      <div>
+        <h3>Fast delivery</h3>
+          <p>
+            Hungry and in a hurry? No problem! Tony's Pizza has you covered.
+            Our lightning-fast delivery service ensures that your hot, fresh
+            pizza arrives at your doorstep in no time. Our drivers are
+            friendly and efficient, so you can enjoy your pizza without the
+            wait. Order now and taste the difference with Tony's Pizza.
+          </p>
+      </div>
+    </div>
+
+    <div class="description-item">
+      <i class="fa-solid fa-coins"></i>
+      <div>
+        <h3>Affordable prices</h3>
+          <p>
+            At Tony's Pizza, we believe that great pizza shouldn't break the
+            bank. That's why we offer affordable prices without sacrificing
+            quality. Our handmade pizzas are made with the freshest
+            ingredients, so you can indulge in the most delicious pizza
+            without hurting your wallet. With our great deals and specials,
+            there's never been a better time to enjoy Tony's Pizza. Order now
+            and taste the value for yourself.
+          </p>
+      </div>
+    </div>
+
+  </div>
+</app-page>

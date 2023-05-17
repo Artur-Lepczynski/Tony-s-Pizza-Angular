@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="modal">
+    <div class="content">
+      <h2>{{header}}</h2>
+      <p>{{message}}</p>
+    </div>
+    <div class="actions">
+      <app-button type="button" look="secondary" use="modal" (buttonClick)="cancel()">
+        <span slot="button">{{cancelText}}</span>
+      </app-button>
+      <app-button type="button" look="primary" use="modal" (buttonClick)="confirm()">
+        <span slot="button">{{confirmText}}</span>
+      </app-button>
+    </div>
+  </div>
+</div>

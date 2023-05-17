@@ -1,0 +1,8 @@
+<button [ngClass]="{'cart-container': 1, animation: animated}" (click)="handleCartClick()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <div class="cart-number">{{ amount }}</div>
+</button>
+
+<!-- menu cart modal -->
+<app-menu-cart-modal *ngIf="modalShown" [menu]="menu" (close)="handleModalClose()"></app-menu-cart-modal>
+```
